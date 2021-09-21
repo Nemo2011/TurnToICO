@@ -7,6 +7,7 @@ import tkinter
 import sys
 
 FORMAT = ['.bmp', '.jpg', '.png', '.gif', '.jfif', '.jpeg']  
+OBJ = '.ico'
 
 def search_file(start_dir):
     img_list = []
@@ -41,12 +42,12 @@ def start():
     for image in images:
         opend_file = Image.open(image)
         image_name = os.path.splitext(image)[0]
-        opend_file.save(image_name + ".png")
+        opend_file.save(image_name + OBJ)
         list.insert("end", image)
     root.title("Done. These are ICO files")
     list.delete(0, END)
     for image in images:
-        ico_name = os.path.splitext(image)[0] + ".ico"
+        ico_name = os.path.splitext(image)[0] + OBJ
         list.insert("end", ico_name)
     end = time.perf_counter()
     turn_t = end - start
