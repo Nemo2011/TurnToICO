@@ -6,9 +6,11 @@ import time
 import tkinter
 import sys
 
+FORMAT = ['.bmp', '.jpg', '.png', '.gif', '.jfif', '.jpeg']  
+
 def search_file(start_dir):
     img_list = []
-    extend_name = ['.bmp', '.jpg', '.png', '.gif', '.jfif', '.jpeg']  
+    extend_name = FORMAT
     os.chdir(start_dir)  
  
     for each_file in os.listdir(os.curdir):
